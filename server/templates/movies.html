@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <table border="1">
+      <thead>
+        <th>Film id</th>
+        <th>Title</th>
+        <th>Release date</th>
+        <th>People</th>
+      </thead>
+      <tbody>
+        {% for film in data %}
+          <tr>
+            <td>{{ film.film_id }}</td>
+            <td>{{ film.title }}</td>
+            <td>{{ film.release_date }}</td>
+            <td>
+              <table id="inner-table">
+              {% for p in film.people %}
+                <tr>
+                  <td>{{ p.character_id }}</td>
+                  <td>{{ p.name }}</td>
+                  <td>{{ p.age }}</td>
+                  <td>{{ p.gender }}</td>
+                </tr>
+              {% endfor %}
+              </table>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+{% endblock %}
