@@ -1,0 +1,2 @@
+#inner-table { border-collapse: collapse }
+#inner-table td + td { border-left: 1px solid black; }
